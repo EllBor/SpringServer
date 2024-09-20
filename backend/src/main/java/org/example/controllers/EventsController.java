@@ -165,9 +165,9 @@ public class EventsController {
             System.out.println("\033[33m events/getAll: " + "start(body): "+body+ "\033[0m");
 
             Optional<User> users = userRepository.findByToken(token);
-            if(!users.isPresent()) {
-                return ResponseEntity.status(401).body("Invalid token");
-            }
+            // if(!users.isPresent()) {
+            //     return ResponseEntity.status(401).body("Invalid token");
+            // }
 
             User user = users.get();
             List<EventSubscription> subscriptions = eventSubscriptionRepository.findAllByUser(user);
